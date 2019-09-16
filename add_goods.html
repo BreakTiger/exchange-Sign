@@ -1,0 +1,251 @@
+<!-- 添加商品 -->
+<include file="Public/header" />
+<include file="Public/topmenu" />
+<link rel="stylesheet" href="/Public/assets/fdadmin/css/common.css">
+<link rel="stylesheet" href="/Public/assets/fdadmin/css/icon.css">
+
+<style>
+    .container {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .content {
+        width: calc(100% - 60px);
+        border-radius: 10px;
+    }
+
+    .content>span {
+        margin: 20px 0 20px 20px;
+        border-left: 3px solid #FE366A;
+        padding-left: 4px;
+    }
+
+    .floor-one>div,
+    .floor-two>div {
+        margin-top: 20px;
+    }
+
+    .floor-one>div>span,
+    .floor-two>div>span {
+        display: inline-block;
+        width: 110px;
+        text-align: right;
+        margin-left: 75px;
+    }
+
+    .inbox {
+        width: 800px;
+        max-width: 48%;
+        height: 50px;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(226, 226, 226, 1);
+        text-indent: 20px;
+    }
+
+    .last-line>div {
+        width: 309px;
+    }
+
+    .last-line>div>span {
+        display: inline-block;
+        width: 85px;
+        text-align: right;
+        margin-left: 103px;
+    }
+
+    .inboxs {
+        width: 200px;
+        max-width: 40%;
+        height: 50px;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(226, 226, 226, 1);
+        text-indent: 10px;
+    }
+
+    .add-box {
+        width: 100px;
+        height: 100px;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(226, 226, 226, 1);
+        position: relative;
+    }
+
+    .add-box:hover {
+        background: #E2E2E2;
+    }
+
+    .add-box>i {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: auto;
+    }
+
+    .upfiles {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        cursor: pointer;
+    }
+
+    .s-img-list {
+        height: 100px;
+        margin-right: 10px;
+    }
+
+    .s-img {
+        width: 100px;
+        height: 100px;
+        margin: 0 1px;
+        position: relative;
+    }
+
+    .s-img>img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .UpBtn {
+        width: 106px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+        background: rgba(254, 54, 106, 1);
+        border-radius: 21px;
+        cursor: pointer;
+        margin: 40px 0 79px 172px;
+    }
+
+    /* 定义radio */
+    .radio {
+        display: -moz-box;
+        display: -webkit-box;
+        display: box;
+        margin-left: 20px;
+    }
+
+
+    input[type=radio] {
+        display: none;
+    }
+
+    /*图片和文字都放在label里面*/
+    label {
+        display: -moz-box;
+        display: -webkit-box;
+        display: box;
+        line-height: 16px;
+        /*不设行高文字垂直方向不居中*/
+        text-indent: 30px;
+        /*使文字缩进：文字和图片都在label里面，不缩进文字和图片叠加在一起*/
+        background: url(http://img.fqapps.com/21b4fa9f93fe652be358ecbfc61eb9dc) no-repeat left top;
+        /*背景图片*/
+        background-size: 16px 16px;
+        /*设置背景图片大小*/
+    }
+
+    input[type=radio]:checked+.radio {
+        background: url(http://img.fqapps.com/bfe83550e3883afb73f531d66d1451a3) no-repeat left top;
+        /*被选中时，换背景图片*/
+        background-size: 16px 16px;
+    }
+</style>
+<div class="am-cf admin-main">
+    <include file="Public/sidebar" />
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div id="Tab-content">
+                <div class="Tab-one flex col">
+                    <div class="am-margin-top-sm am-margin-left">
+                        <strong class="am-text-primary am-text-lg">添加商品</strong> / <small>Add the Goods</small>
+                    </div>
+                    <div class="container b-f2 flex col fl-align">
+                        <div class="content b-ff flex col">
+                            <span class="fz-16 c-6A f-wb">兑换设置</span>
+                            <div class="floor-one fz-16 c-60">
+                                <!-- 兑换类型 -->
+                                <div class="line-one flex fl-align">
+                                    <span>兑换类型：</span>
+                                    <input name="sex" id="zero" type="radio" checked="checked" />
+                                    <label for="zero" class="radio">&nbsp;&nbsp;0元兑换</label>
+                                    <input name="sex" id="low" type="radio" />
+                                    <label for="low" class="radio">&nbsp;&nbsp;低价兑换</label>
+                                </div>
+                                <!-- 到手价格 -->
+                                <div class="line-two flex fl-align">
+                                    <span>到手价格：</span>
+                                    <input type="text" class="price inbox">
+                                </div>
+                                <!-- 兑换福气值 -->
+                                <div class="line-three flex fl-align">
+                                    <span>兑换福气值：</span>
+                                    <input type="text" class="exchange inbox">
+                                </div>
+                                <!-- 奖品库存 -->
+                                <div class="line-four flex fl-align">
+                                    <span>奖品库存量：</span>
+                                    <input type="text" class="inventory inbox">
+                                </div>
+                            </div>
+                            <span class="fz-16 c-6A f-wb">奖品设置</span>
+                            <div class="floor-two">
+                                <!-- 商品地址 -->
+                                <div class="line-five flex fl-align">
+                                    <span>商品地址：</span>
+                                    <input type="text" class="a-link inbox">
+                                </div>
+                                <!-- 商品标题 -->
+                                <div class="line-six flex fl-align">
+                                    <span>商品标题：</span>
+                                    <input type="text" class="a-name inbox">
+                                </div>
+                                <!-- 商品图片 -->
+                                <div class="line-seven flex fl-align">
+                                    <span>商品图片：</span>
+                                    <input type="hidden" value="" id="banner_image1" />
+                                    <div class="s-img-list flex fl-align">
+                                        <div class="s-img">
+                                            <img src="http://img.fqapps.com/977a4966a7a7d82da1808280d9253493" alt="" />
+                                            <i class="close"></i>
+                                        </div>
+                                    </div>
+                                    <div class="add-box flex fl-align">
+                                        <i class="add-one"></i>
+                                        <i class="add-two hides"></i>
+                                        <input type="file" class="upfiles">
+                                    </div>
+                                </div>
+                                <!-- 优惠券链接 -->
+                                <div class="line-eight flex fl-align">
+                                    <span>优惠券链接：</span>
+                                    <input type="text" class="c-link inbox">
+                                </div>
+                                <!-- 商品原价 -->
+                                <div class="last-line flex fl-align">
+                                    <div class="flex fl-align">
+                                        <span>商品原价：</span>
+                                        <input type="text" class="o-price inboxs">
+                                    </div>
+                                    <div class="flex fl-align">
+                                        <span>券额：</span>
+                                        <input type="text" class="preferential inboxs">
+                                    </div>
+                                    <div class="flex fl-align">
+                                        <span>券后价：</span>
+                                        <input type="text" class="d-price inboxs">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="UpBtn fz-16 c-ff f-w4">提交奖品</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

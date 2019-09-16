@@ -1,0 +1,261 @@
+<!-- 兑换管理 -->
+<include file="Public/header" />
+<include file="Public/topmenu" />
+<link rel="stylesheet" href="/Public/assets/fdadmin/css/common.css">
+<link rel="stylesheet" href="/Public/assets/fdadmin/css/icon.css">
+<style>
+    .container {
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .nav {
+        width: 520px;
+    }
+
+    .nav>ul {
+        margin: 0px;
+    }
+
+    .nav>ul>li {
+        margin: 0 60px;
+        padding-bottom: 14px;
+        padding-top: 35px;
+    }
+
+    .chose {
+        font-weight: bold;
+        color: #FE366A;
+        text-shadow: 0px 3px 2px rgba(254, 54, 106, 0.5);
+        border-bottom: 2px solid #FE366A;
+    }
+
+    .search-box {
+        width: 368px;
+        height: 46px;
+        background: rgba(254, 54, 106, 0.08);
+        border-radius: 23px;
+        margin-right: 70px;
+    }
+
+    .search-box>input {
+        width: 100%;
+        height: 100%;
+        text-indent: 21px;
+        background-color: transparent;
+        border-radius: 23px 0 0 23px;
+    }
+
+    .user-head {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+
+    .user-info {
+        margin: 0px;
+    }
+
+    .Btn {
+        color: #FE366A;
+        padding: 4px 8px;
+        border: 1px solid rgba(254, 54, 106, 1);
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .cover {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 10000;
+    }
+
+    .Message {
+        width: 600px;
+        height: 298px;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 10px;
+        margin: auto;
+    }
+
+    .Message>span {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .inputs {
+        width: 460px;
+        height: 46px;
+        background: rgba(255, 239, 243, 1);
+        border-radius: 2px;
+    }
+
+    .names {
+        margin-bottom: 30px;
+    }
+
+    .codes {
+        margin-bottom: 40px;
+    }
+
+    .last-line{
+        width: 100%;
+    }
+    .last-line>span {
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 4px 20px;
+    }
+
+    .suer {
+        background: #FE366A;
+        margin-left: 110px;
+    }
+
+    .canel {
+        margin-right: 110px;
+        border: 1px solid rgba(254, 54, 106, 1);
+    }
+</style>
+<div class="am-cf admin-main">
+    <include file="Public/sidebar" />
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div id="Tab-content">
+                <div class="Tab-two flex col">
+                    <div class="am-margin-top-sm am-margin-left">
+                        <strong class="am-text-primary am-text-lg">兑换管理</strong>
+                    </div>
+                    <div class="nav-search flex fl-align fl-jsb">
+                        <div class="nav">
+                            <ul class="flex">
+                                <li class="chose">待处理</li>
+                                <li>已处理</li>
+                                <li>全部</li>
+                            </ul>
+                        </div>
+                        <div class="search-box flex fl-align">
+                            <input type="text" placeholder="请输入宝贝ID" class="fz-16 c-bb">
+                            <i class="search"></i>
+                        </div>
+                    </div>
+                    <div class="container b-f2">
+                        <!-- 表格 -->
+                        <table class="am-table am-table-striped am-table-hover table-main" id="tablebox"
+                            style="padding:1.5rem 3.2rem;margin-bottom: 78px;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 60px;">序号</th>
+                                    <th style="width: 260px;">用户信息</th>
+                                    <th>兑换商品</th>
+                                    <th>兑换时间</th>
+                                    <th>兑换数量</th>
+                                    <th>扣除价格</th>
+                                    <th>扣除福气值</th>
+                                    <th style="width: 220px;">收货信息</th>
+                                    <th>发货状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody" class="fz-16 c-66">
+                                <tr>
+                                    <td class="am-text-middle">
+                                        <span>1</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <div class="flex fl-align">
+                                            <img src="http://img.fqapps.com/5b2f6068efa56f4e0564030d83797424"
+                                                class="user-head">
+                                            <div class="user-info flex col">
+                                                <span>昵称：987456</span>
+                                                <span>账号：15800000000</span>
+                                                <span>备注：你好</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span>福袋娃定制充电宝</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span>2019-01-06 12:12:12</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span>1</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span>50.00</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span>5000</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <div class="address flex col">
+                                            <span>姓名:张三</span>
+                                            <span>电话:13523562541</span>
+                                            <span>地址:XXX省XX市XX区安华街道36号</span>
+                                        </div>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <!-- <span>待发货</span> -->
+                                        <div class="send flex col">
+                                            <span>中通快递</span>
+                                            <span>12345678912</span>
+                                        </div>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="Btn fz-18">确定发货</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 分页器 -->
+                        <div id="pagelist1" class="page_div page_div_one"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cover flex col fl-align hides">
+    <div class="Message flex col fl-align">
+        <span class="fz-16 c-6A f-wb">物流信息</span>
+        <div class="names flex fl-align">
+            <span>物流名称:</span>
+            <input type="text" class="w-name inputs">
+        </div>
+        <div class="codes flex fl-align">
+            <span>物流单号:</span>
+            <input type="text" class="w-code inputs">
+        </div>
+        <div class="last-line fz-18 flex fl-align fl-jsb">
+            <span class="suer c-ff">确定</span>
+            <span class="canel c-6A">取消</span>
+        </div>
+    </div>
+</div>
+<script src="/Public/assets/fdadmin/js/jquery.min.js"></script>
+<script src="/Public/assets/fdadmin/js/pageMe.js"></script>
+<script src="/Public/assets/fdadmin/js/common.js"></script>
+<script>
+    $(function () {
+        $("#pagelist1").paging({
+            pageNum: 1, // 当前页面
+            totalNum: 20, // 总页码
+            totalList: 15, // 记录总数量
+            callback: function (num) { //回调函数
+            }
+        });
+
+        $('.exchang').on('click', function () {
+            window.location.href = "manage-detail.html"
+        })
+
+
+    })
+</script>

@@ -1,0 +1,129 @@
+<!-- 签到记录 -->
+<include file="Public/header" />
+<include file="Public/topmenu" />
+<link rel="stylesheet" href="/Public/assets/fdadmin/css/common.css">
+<link rel="stylesheet" href="/Public/assets/fdadmin/css/icon.css">
+<style>
+    .search-line {
+        margin-bottom: 10px;
+    }
+
+    .search-line>span {
+        margin-left: 31px;
+        margin-right: 28px;
+    }
+
+    .search-box {
+        width: 368px;
+        height: 46px;
+        background: rgba(254, 54, 106, 0.08);
+        border-radius: 23px;
+    }
+
+    .search-box>input {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        text-indent: 21px;
+    }
+
+    .container {
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .head-img {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+</style>
+<div class="am-cf admin-main">
+    <include file="Public/sidebar" />
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div id="Tab-content">
+                <div class="Tab-two flex col">
+                    <div class="am-margin-top-sm am-margin-left">
+                        <strong class="am-text-primary am-text-lg">签到记录</strong>
+                    </div>
+                    <div class="search-line fz-16 flex fl-align">
+                        <span class="c-66">按用户手机号搜索</span>
+                        <div class="search-box flex fl-align">
+                            <input type="text" placeholder="请输入搜索内容">
+                            <i class="search"></i>
+                        </div>
+                    </div>
+                    <div class="container b-f2">
+                        <!-- 表格 -->
+                        <table class="am-table am-table-striped am-table-hover table-main" id="tablebox"
+                            style="padding:1.5rem 3.2rem;margin-bottom: 78px;">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th style="width: 450px;">用户信息</th>
+                                    <th>福气值</th>
+                                    <th>累计签到记录</th>
+                                    <th>最近一次签到记录</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody" class="fz-16 c-66">
+                                <tr>
+                                    <td class="am-text-middle">
+                                        <span>1</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <div class="flex fl-align">
+                                            <img src="" class="head-img">
+                                            <div class="flex col">
+                                                <span>昵称：987456</span>
+                                                <span>账号：15800000000</span>
+                                                <span>备注：你好</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <div class="flex fl-align">
+                                            <span>500</span>
+                                            <i class="edtor"></i>
+                                        </div>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span>500</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span>2019-01-01</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 分页器 -->
+                        <div id="pagelist1" class="page_div page_div_one"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/Public/assets/fdadmin/js/jquery.min.js"></script>
+<script src="/Public/assets/fdadmin/js/pageMe.js"></script>
+<script src="/Public/assets/fdadmin/js/common.js"></script>
+<script>
+    $(function () {
+        $("#pagelist1").paging({
+            pageNum: 1, // 当前页面
+            totalNum: 20, // 总页码
+            totalList: 15, // 记录总数量
+            callback: function (num) { //回调函数
+            }
+        });
+
+        $('.exchang').on('click', function () {
+            window.location.href = "manage-detail.html"
+        })
+
+
+    })
+</script>

@@ -1,0 +1,36 @@
+.add-one {
+    background: url(http://img.fqapps.com/977a4966a7a7d82da1808280d9253493) no-repeat center/80px;
+}
+
+.add-two {
+    background: url(http://img.fqapps.com/f969c5e6294108f4e6a1baf842b1e01f) no-repeat center/80px;
+}
+
+.close {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(http://img.fqapps.com/5b2f6068efa56f4e0564030d83797424) no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 50;
+}
+
+.search {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(http://img.fqapps.com/17cef4f7f513a0e4d8c141a043f65e59) no-repeat center/16px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.edtor{
+    display: block;
+    width: 12px;
+    height: 13px;
+    background: url(http://img.fqapps.com/6751af47615501a52ac130c42d9d763c) no-repeat center/12px;
+    cursor: pointer;
+    margin-left: 5px;
+}

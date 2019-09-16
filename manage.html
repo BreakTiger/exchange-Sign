@@ -1,0 +1,211 @@
+<!-- 奖品管理 -->
+<include file="Public/header" />
+<include file="Public/topmenu" />
+<link rel="stylesheet" href="/Public/assets/fdadmin/css/common.css">
+<link rel="stylesheet" href="/Public/assets/fdadmin/css/icon.css">
+<style>
+    .container {
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    .nav {
+        width: 520px;
+    }
+
+    .nav>ul {
+        margin: 0px;
+    }
+
+    .nav>ul>li {
+        margin: 0 60px;
+        padding-bottom: 14px;
+        padding-top: 35px;
+    }
+
+    .chose {
+        font-weight: bold;
+        color: #FE366A;
+        text-shadow: 0px 3px 2px rgba(254, 54, 106, 0.5);
+        border-bottom: 2px solid #FE366A;
+    }
+
+    .search-box {
+        width: 368px;
+        height: 46px;
+        background: rgba(254, 54, 106, 0.08);
+        border-radius: 23px;
+        margin-right: 70px;
+    }
+
+    .search-box>input {
+        width: 100%;
+        height: 100%;
+        text-indent: 21px;
+        background-color: transparent;
+        border-radius: 23px 0 0 23px;
+    }
+
+    .good-img {
+        width: 74px;
+        height: 74px;
+    }
+
+    .t-info {
+        width: 100%;
+    }
+
+    .exchang {
+        padding: 4px 8px;
+        border: 1px solid rgba(254, 54, 106, 1);
+        border-radius: 20px;
+        color: #FE366A;
+        cursor: pointer;
+    }
+
+    
+</style>
+<div class="am-cf admin-main">
+    <include file="Public/sidebar" />
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div id="Tab-content">
+                <div class="Tab-two flex col">
+                    <div class="am-margin-top-sm am-margin-left">
+                        <strong class="am-text-primary am-text-lg">奖品管理</strong> / <small>Prize Management</small>
+                    </div>
+                    <div class="nav-search flex fl-align fl-jsb">
+                        <div class="nav">
+                            <ul class="flex fz-16 c-99">
+                                <li class="chose">进行中</li>
+                                <li>已结束</li>
+                                <li>全部</li>
+                            </ul>
+                        </div>
+                        <div class="search-box flex fl-align">
+                            <input type="text" placeholder="请输入宝贝ID" class="fz-16 c-bb">
+                            <i class="search"></i>
+                        </div>
+                    </div>
+                    <div class="container b-f2 flex col fl-align">
+                        <!-- 表格 -->
+                        <table class="am-table am-table-striped am-table-hover table-main" id="tablebox"
+                            style="padding:1.5rem 3.2rem;margin-bottom: 78px;">
+                            <thead>
+                                <tr>
+                                    <th>礼品ID</th>
+                                    <th>礼品图片</th>
+                                    <th>标题</th>
+                                    <th>原价(元)</th>
+                                    <th>兑换价格(元)</th>
+                                    <th>所需福气值</th>
+                                    <th>总数量</th>
+                                    <th>已领量</th>
+                                    <th>剩余量</th>
+                                    <th>状态</th>
+                                    <th>管理</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody" class="fz-16 c-66">
+                                <tr>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">0001</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <img src="http://img.fqapps.com/5b2f6068efa56f4e0564030d83797424"
+                                            class="good-img">
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-title clamp2">耐克官方旗舰店111111111111111111</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">56.00</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">56.00</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">5000</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">150</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">5</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">5</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">已结束</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="exchang fz-18">兑换明细</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">0001</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <img src="http://img.fqapps.com/5b2f6068efa56f4e0564030d83797424"
+                                            class="good-img">
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">耐克官方旗舰店111111111111111111</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">56.00</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">56.00</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">5000</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">150</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">5</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">5</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="t-info">已结束</span>
+                                    </td>
+                                    <td class="am-text-middle">
+                                        <span class="exchang fz-18">兑换明细</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 分页器 -->
+                        <div id="pagelist1" class="page_div page_div_one"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/Public/assets/fdadmin/js/jquery.min.js"></script>
+<script src="/Public/assets/fdadmin/js/pageMe.js"></script>
+<script src="/Public/assets/fdadmin/js/common.js"></script>
+<script>
+    $(function () {
+        $("#pagelist1").paging({
+            pageNum: 1, // 当前页面
+            totalNum: 20, // 总页码
+            totalList: 15, // 记录总数量
+            callback: function (num) { //回调函数
+            }
+        });
+
+        $('.exchang').on('click', function () {
+            window.location.href = "manage-detail.html"
+        })
+
+
+    })
+</script>
